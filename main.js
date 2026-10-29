@@ -38,15 +38,9 @@ function tampil() {
   jumlah.textContent = `Menampilkan ${hasil.length} dari ${KARYA.length} karya`;
 }
 
-function pasangDetail() {
-  galeri.querySelectorAll('button[data-id]').forEach((tombol) => {
-    tombol.addEventListener('click', () => {
-      const k = KARYA.find((x) => x.id === Number(tombol.dataset.id));
-      detail.hidden = false;
-      detail.textContent = `${k.judul} — ${k.kategori}, dibuat oleh ${k.pembuat} (${k.tahun}).`;
-    });
-  });
-}
+tampil();
+cari.addEventListener('input', tampil);
+filterKategori.addEventListener('change', tampil);
 
 tampil();
 pasangDetail();
